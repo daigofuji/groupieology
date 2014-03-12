@@ -1,3 +1,21 @@
+// global
+
+.content {
+	min-height: 500px;
+}
+
+
+footer {
+	padding: 3rem 0; 
+	line-height: 1.5;
+	background-color: #ddd;
+	color: #777;
+	font-size: 85%;
+	a {
+		color: #666;
+	}
+}
+
 // Search box style 
 
 .input-search {
@@ -45,6 +63,8 @@
 	display: inline-block;
 	margin: 25px 10px;
 }
+
+
 //.icon-headphones {
 //	display:inline-block;
 //	width:128px;

@@ -9405,6 +9405,24 @@ th.hide-for-touch {
 }
 
 /* line 3, ../scss/_groupieology.scss */
+.content {
+  min-height: 500px;
+}
+
+/* line 8, ../scss/_groupieology.scss */
+footer {
+  padding: 3rem 0;
+  line-height: 1.5;
+  background-color: #ddd;
+  color: #999;
+  font-size: 85%;
+}
+/* line 14, ../scss/_groupieology.scss */
+footer a {
+  color: #666;
+}
+
+/* line 21, ../scss/_groupieology.scss */
 .input-search {
   font-size: 3.125rem;
   font-weight: 300;
@@ -9430,25 +9448,25 @@ th.hide-for-touch {
   margin-bottom: 1rem;
 }
 
-/* line 30, ../scss/_groupieology.scss */
+/* line 48, ../scss/_groupieology.scss */
 .performer {
   height: 80px;
   width: auto;
   float: left;
   margin-right: .6rem;
 }
-/* line 36, ../scss/_groupieology.scss */
+/* line 54, ../scss/_groupieology.scss */
 .performer:hover {
   background: #f4f4f4;
 }
 
-/* line 40, ../scss/_groupieology.scss */
+/* line 58, ../scss/_groupieology.scss */
 .performer-photo {
   width: 80px;
   overflow: hidden;
 }
 
-/* line 44, ../scss/_groupieology.scss */
+/* line 62, ../scss/_groupieology.scss */
 .performer-name {
   display: inline-block;
   margin: 25px 10px;
