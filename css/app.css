@@ -1519,8 +1519,8 @@ select {
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  background-color: #008cba;
-  border-color: #0078a0;
+  background-color: #ba0106;
+  border-color: #a00105;
   color: white;
 }
 /* line 109, ../bower_components/foundation/scss/foundation/components/_alert-boxes.scss */
@@ -3310,7 +3310,7 @@ select {
 .breadcrumbs > * a,
 .breadcrumbs > * span {
   text-transform: uppercase;
-  color: #008cba;
+  color: #ba0106;
 }
 /* line 75, ../bower_components/foundation/scss/foundation/components/_breadcrumbs.scss */
 .breadcrumbs > *.current {
@@ -3374,8 +3374,8 @@ button, .button {
   padding-left: 2rem;
   font-size: 1rem;
   /*     @else                            { font-size: $padding - rem-calc(2); } */
-  background-color: #008cba;
-  border-color: #007095;
+  background-color: #ba0106;
+  border-color: #950105;
   color: white;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
@@ -3389,7 +3389,7 @@ button, .button {
 }
 /* line 146, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: #007095;
+  background-color: #950105;
 }
 /* line 157, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
@@ -3492,8 +3492,8 @@ button.round, button.performer, .button.round, .button.performer {
 }
 /* line 224, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button.disabled, button[disabled], .button.disabled, .button[disabled] {
-  background-color: #008cba;
-  border-color: #007095;
+  background-color: #ba0106;
+  border-color: #950105;
   color: white;
   cursor: default;
   opacity: 0.7;
@@ -3502,7 +3502,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
 }
 /* line 146, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-  background-color: #007095;
+  background-color: #950105;
 }
 /* line 157, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
@@ -3510,7 +3510,7 @@ button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[dis
 }
 /* line 170, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-  background-color: #008cba;
+  background-color: #ba0106;
 }
 /* line 225, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
 button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
@@ -5200,7 +5200,7 @@ kbd {
   margin-bottom: inherit;
   padding: 0.25rem 0.5rem 0.375rem;
   font-size: 0.6875rem;
-  background-color: #008cba;
+  background-color: #ba0106;
   color: white;
 }
 /* line 96, ../bower_components/foundation/scss/foundation/components/_labels.scss */
@@ -5734,14 +5734,14 @@ ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus {
 }
 /* line 64, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
 ul.pagination li.current a {
-  background: #008cba;
+  background: #ba0106;
   color: white;
   font-weight: bold;
   cursor: default;
 }
 /* line 71, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
 ul.pagination li.current a:hover, ul.pagination li.current a:focus {
-  background: #008cba;
+  background: #ba0106;
 }
 /* line 124, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
 ul.pagination li {
@@ -5795,10 +5795,10 @@ ul.pagination li {
 .panel.callout {
   border-style: solid;
   border-width: 1px;
-  border-color: #b6edff;
+  border-color: #ffb6b8;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #ecfaff;
+  background: #ffecec;
 }
 /* line 52, ../bower_components/foundation/scss/foundation/components/_panels.scss */
 .panel.callout > :first-child {
@@ -5823,7 +5823,7 @@ ul.pagination li {
 }
 /* line 78, ../bower_components/foundation/scss/foundation/components/_panels.scss */
 .panel.callout a:not(.button) {
-  color: #008cba;
+  color: #ba0106;
 }
 /* line 83, ../bower_components/foundation/scss/foundation/components/_panels.scss */
 .panel.radius {
@@ -5902,7 +5902,7 @@ ul.pagination li {
 }
 /* line 61, ../bower_components/foundation/scss/foundation/components/_progress-bars.scss */
 .progress .meter {
-  background: #008cba;
+  background: #ba0106;
   height: 100%;
   display: block;
 }
@@ -5992,13 +5992,13 @@ ul.pagination li {
 }
 /* line 130, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
 .range-slider.radius .range-slider-handle {
-  background: #008cba;
+  background: #ba0106;
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 /* line 99, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
 .range-slider.radius .range-slider-handle:hover {
-  background: #007ba4;
+  background: #a40105;
 }
 /* line 132, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
 .range-slider.round, .range-slider.performer {
@@ -6008,13 +6008,13 @@ ul.pagination li {
 }
 /* line 134, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
 .range-slider.round .range-slider-handle, .range-slider.performer .range-slider-handle {
-  background: #008cba;
+  background: #ba0106;
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
 /* line 99, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
 .range-slider.round .range-slider-handle:hover, .range-slider.performer .range-slider-handle:hover {
-  background: #007ba4;
+  background: #a40105;
 }
 
 /* line 137, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
@@ -6035,11 +6035,11 @@ ul.pagination li {
   height: 1.375rem;
   border: 1px solid none;
   cursor: pointer;
-  background: #008cba;
+  background: #ba0106;
 }
 /* line 99, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
 .range-slider-handle:hover {
-  background: #007ba4;
+  background: #a40105;
 }
 
 /* line 156, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
@@ -6215,15 +6215,15 @@ dialog[open] {
 /* line 66, ../bower_components/foundation/scss/foundation/components/_side-nav.scss */
 .side-nav li a:not(.button) {
   display: block;
-  color: #008cba;
+  color: #ba0106;
 }
 /* line 70, ../bower_components/foundation/scss/foundation/components/_side-nav.scss */
 .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
-  color: #1cc7ff;
+  color: #fe1e24;
 }
 /* line 73, ../bower_components/foundation/scss/foundation/components/_side-nav.scss */
 .side-nav li.active > a:first-child:not(.button) {
-  color: #1cc7ff;
+  color: #fe1e24;
   font-weight: normal;
   font-family: "Raleway", sans-serif;
 }
@@ -6420,7 +6420,7 @@ dialog[open] {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   font-weight: normal;
-  background: #008cba;
+  background: #ba0106;
   padding: 0.1875rem 1rem;
   cursor: default;
   color: white;
@@ -6429,7 +6429,7 @@ dialog[open] {
 .sub-nav dt.active a:hover,
 .sub-nav dd.active a:hover,
 .sub-nav li.active a:hover {
-  background: #0078a0;
+  background: #a00105;
 }
 
 /* line 293, ../bower_components/foundation/scss/foundation/components/_switch.scss */
@@ -6848,8 +6848,8 @@ table tfoot tr td {
 }
 /* line 54, ../bower_components/foundation/scss/foundation/components/_thumbs.scss */
 .th:hover, .th:focus {
-  -webkit-box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
-  box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
+  -webkit-box-shadow: 0 0 6px 1px rgba(186, 1, 6, 0.5);
+  box-shadow: 0 0 6px 1px rgba(186, 1, 6, 0.5);
 }
 /* line 71, ../bower_components/foundation/scss/foundation/components/_thumbs.scss */
 .th.radius {
@@ -6867,8 +6867,8 @@ table tfoot tr td {
 }
 /* line 44, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
 .has-tip:hover, .has-tip:focus {
-  border-bottom: dotted 1px #003f54;
-  color: #008cba;
+  border-bottom: dotted 1px #540003;
+  color: #ba0106;
 }
 /* line 50, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
 .has-tip.tip-left, .has-tip.tip-right {
@@ -6922,8 +6922,8 @@ table tfoot tr td {
 }
 /* line 93, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
 .tooltip.opened {
-  color: #008cba !important;
-  border-bottom: dotted 1px #003f54 !important;
+  color: #ba0106 !important;
+  border-bottom: dotted 1px #540003 !important;
 }
 
 /* line 99, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
@@ -7179,14 +7179,14 @@ meta.foundation-mq-topbar {
 }
 /* line 321, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button {
-  background: #008cba;
+  background: #ba0106;
   font-size: 0.8125rem;
   padding-right: 15px;
   padding-left: 15px;
 }
 /* line 326, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button:hover {
-  background: #006688;
+  background: #880104;
 }
 /* line 330, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.secondary {
@@ -7219,12 +7219,12 @@ meta.foundation-mq-topbar {
 }
 /* line 359, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a {
-  background: #008cba;
+  background: #ba0106;
   color: white;
 }
 /* line 362, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a:hover {
-  background: #0078a0;
+  background: #a00105;
   color: white;
 }
 /* line 370, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
@@ -7417,11 +7417,11 @@ meta.foundation-mq-topbar {
     padding: 0 15px;
     line-height: 45px;
     color: white;
-    background: #008cba;
+    background: #ba0106;
   }
   /* line 509, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-    background: #0078a0;
+    background: #a00105;
   }
   /* line 518, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown > a {
@@ -7537,7 +7537,7 @@ meta.foundation-mq-topbar {
   }
   /* line 630, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:active > a {
-    background: #008cba;
+    background: #ba0106;
     color: white;
   }
   /* line 638, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
@@ -8039,13 +8039,13 @@ td {
 /* Default Link Styles */
 /* line 287, ../bower_components/foundation/scss/foundation/components/_type.scss */
 a {
-  color: #008cba;
+  color: #ba0106;
   text-decoration: none;
   line-height: inherit;
 }
 /* line 293, ../bower_components/foundation/scss/foundation/components/_type.scss */
 a:hover, a:focus {
-  color: #0078a0;
+  color: #a00105;
 }
 /* line 295, ../bower_components/foundation/scss/foundation/components/_type.scss */
 a img {
@@ -9405,11 +9405,16 @@ th.hide-for-touch {
 }
 
 /* line 3, ../scss/_groupieology.scss */
-.content {
+.content-container {
   min-height: 500px;
 }
 
-/* line 8, ../scss/_groupieology.scss */
+/* line 7, ../scss/_groupieology.scss */
+.logo {
+  color: #ba0106;
+}
+
+/* line 11, ../scss/_groupieology.scss */
 footer {
   padding: 3rem 0;
   line-height: 1.5;
@@ -9417,12 +9422,12 @@ footer {
   color: #777;
   font-size: 85%;
 }
-/* line 14, ../scss/_groupieology.scss */
+/* line 17, ../scss/_groupieology.scss */
 footer a {
   color: #666;
 }
 
-/* line 21, ../scss/_groupieology.scss */
+/* line 24, ../scss/_groupieology.scss */
 .input-search {
   font-size: 3.125rem;
   font-weight: 300;
@@ -9448,31 +9453,31 @@ footer a {
   margin-bottom: 1rem;
 }
 
-/* line 48, ../scss/_groupieology.scss */
+/* line 51, ../scss/_groupieology.scss */
 .performer {
   height: 80px;
   width: auto;
   float: left;
   margin-right: .6rem;
 }
-/* line 54, ../scss/_groupieology.scss */
+/* line 57, ../scss/_groupieology.scss */
 .performer:hover {
   background: #f4f4f4;
 }
 
-/* line 58, ../scss/_groupieology.scss */
+/* line 61, ../scss/_groupieology.scss */
 .performer-photo {
   width: 80px;
   overflow: hidden;
 }
 
-/* line 62, ../scss/_groupieology.scss */
+/* line 65, ../scss/_groupieology.scss */
 .performer-name {
   display: inline-block;
   margin: 25px 10px;
 }
 
-/* line 66, ../scss/_groupieology.scss */
+/* line 69, ../scss/_groupieology.scss */
 .event-map {
   width: 100%;
   height: 400px;
