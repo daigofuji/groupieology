@@ -1,23 +1,24 @@
 $(function() {
+	var Groupieology = Groupieology || {};
 	
-	var Performer = Backbone.Model.extend({
+	Groupieology.Performer = Backbone.Model.extend({
 		
 	});
 	
-	var Event = Backbone.Model.extend({
+	Groupieology.Event = Backbone.Model.extend({
 	
 	});
 	
-	var Venue = Backbone.Model.extend({
+	Groupieology.Venue = Backbone.Model.extend({
 	
 	});
 	
-	var Events = Backbone.Collection.extend({
+	Groupieology.Events = Backbone.Collection.extend({
 		model: Event
 	});
 	
-	var Performers = Backbone.Collection.extend({
-		model: Performer,
+	Groupieology.Performers = Backbone.Collection.extend({
+		model: Groupieology.Performer,
 		parse: function(data) {
 			var performers = [];
 			if (typeof data.performers !== 'undefined') {
@@ -25,7 +26,6 @@ $(function() {
 					performers.push(v);
 				});
 			}
-			console.log(performers);
 			return performers;			
 		},
 		fetch: function(options) {
@@ -41,7 +41,7 @@ $(function() {
 		}
 	});
 	
-	var PerformerView = Backbone.View.extend({
+	Groupieology.PerformerView = Backbone.View.extend({
 		tagName: 'div',
 		className: 'performer',
 		template: _.template($('#search-result-template').html()),
@@ -51,20 +51,20 @@ $(function() {
 		}		
 	});
 	
-	var Groupieology = Backbone.View.extend({
+	Groupieology.AppView = Backbone.View.extend({
 		el: '#groupiology-app',
 		events: {
 			'keypress #search' : 'search'
 		},
 		initialize : function() {
 			/* create a simple performers collection to hold our search results */
-			this.searchResults = new Performers();
+			this.searchResults = new Groupieology.Performers();
 			
 			/* set up a listener function to update the search results div when the 
 			 * Performers collection has changed */
 			this.listenTo(this.searchResults, 'add', function(performer) {
 				/* create a new performer view */
-				var view = new PerformerView({ model: performer });
+				var view = new Groupieology.PerformerView({ model: performer });
 				
 				/* append it to the search list */				
 				this.$('#search-results').append(view.render().el);
@@ -80,5 +80,23 @@ $(function() {
 			}
 		}
 	});
-	var GroupieologyApp = new Groupieology();
+	
+	Groupieology.Router = Backbone.Router.extend({
+		routes: {
+			'artist/:id': 'showArtistMap'
+		},
+		
+		showArtistMap: function(id) {
+			
+			/* get the events for an artist */
+			
+			/* build the map */
+			
+			/* display the map */
+		}
+	});
+	
+	Groupieology.router = new Groupieology.Router();
+	Backbone.history.start();
+	Groupieology.app = new Groupieology.AppView();
 });
