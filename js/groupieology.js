@@ -66,7 +66,7 @@ $(function() {
 				/* create a new performer view */
 				var view = new PerformerView({ model: performer });
 				
-				/* append it to the search list */
+				/* append it to the search list */				
 				this.$('#search-results').append(view.render().el);
 			});
 		},
@@ -75,6 +75,7 @@ $(function() {
 			if (event.keyCode == 13) {
 				var $term = $('input[id="search"]').val();
 				this.searchResults.setSearchKey($term);
+				this.$('#search-results').empty();
 				this.searchResults.fetch();
 			}
 		}
