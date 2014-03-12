@@ -14,7 +14,27 @@ $(function() {
 	});
 	
 	Groupieology.Events = Backbone.Collection.extend({
-		model: Event
+		model: Groupieology.Event,
+		parse: function(data) {
+			var events = [];
+			if (typeof data.events !== 'undefined') {
+				$.each(data.events, function(i,v) {
+					events.push(v);
+				});
+			}
+			return events;			
+		},
+		fetch: function(options) {
+			options = options || {};
+			options.dataType = 'json';
+			options.url = 'http://api.seatgeek.com/2/events?performers.id=' + this.searchKey;
+
+			/* fetch the data */
+			return Backbone.Collection.prototype.fetch.call(this, options);
+		},
+		setSearchKey: function(key) {
+			this.searchKey = key;
+		}
 	});
 	
 	Groupieology.Performers = Backbone.Collection.extend({
@@ -42,7 +62,7 @@ $(function() {
 	});
 	
 	Groupieology.PerformerView = Backbone.View.extend({
-		tagName: 'div',
+		tagName: 'li',
 		className: 'performer',
 		template: _.template($('#search-result-template').html()),
 		render: function() {
@@ -67,7 +87,7 @@ $(function() {
 				var view = new Groupieology.PerformerView({ model: performer });
 				
 				/* append it to the search list */				
-				this.$('#search-results').append(view.render().el);
+				this.$('#content').append(view.render().el);
 			});
 		},
 		search : function(event) {
@@ -75,7 +95,7 @@ $(function() {
 			if (event.keyCode == 13) {
 				var $term = $('input[id="search"]').val();
 				this.searchResults.setSearchKey($term);
-				this.$('#search-results').empty();
+				this.$('#content').empty();
 				this.searchResults.fetch();
 			}
 		}
@@ -87,12 +107,11 @@ $(function() {
 		},
 		
 		showArtistMap: function(id) {
-			
 			/* get the events for an artist */
-			
-			/* build the map */
-			
-			/* display the map */
+			var artistEvents = new Groupieology.Events();
+			artistEvents.setSearchKey(id);
+			this.$('#content').empty();
+			artistEvents.fetch();
 		}
 	});
 	
