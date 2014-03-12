@@ -71,6 +71,69 @@ $(function() {
 		}		
 	});
 	
+	Groupieology.EventsView = Backbone.View.extend({
+		render: function() {
+			var locations = [];
+			var mapHolder = document.getElementById('event-map');
+			var mapOptions = {
+				zoom: 0,
+				center: new google.maps.LatLng(0, 0),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+
+			var polyOptions = {
+				strokeColor: '#FF0000',
+				strokeOpacity: 1.0,
+				strokeWeight: 4
+			};
+
+			var map = new google.maps.Map(mapHolder, mapOptions);
+
+			var poly = new google.maps.Polyline(polyOptions);
+			poly.setMap(map);
+
+			var path = poly.getPath();
+			var latlngbounds = new google.maps.LatLngBounds();
+
+			var markers = Array();
+			var infoWindows = Array();
+
+			if (this.model !== 'undefined') {
+				/* assume an events collection */
+				this.model.each(function(artistEvent) {
+					locations.push({
+						name: artistEvent.get('venue').name,
+						latlng: new google.maps.LatLng(artistEvent.get('venue').location.lat, artistEvent.get('venue').location.lon)
+					});
+				});
+			}
+			
+			for (var i = 0; i < locations.length; i++) {
+				var marker = new google.maps.Marker( {
+					position: locations[i].latlng,
+					map: map,
+					title: locations[i].name,
+					infoWindowIndex: i
+				});
+
+				var infoWindow = new google.maps.InfoWindow({
+					content: marker.title
+				});
+
+				google.maps.event.addListener(marker, 'click', function() {
+					infoWindows[this.infoWindowIndex].open(map, this);
+				});
+
+				infoWindows.push(infoWindow);
+				path.push(locations[i].latlng);
+				latlngbounds.extend(locations[i].latlng);
+			}
+
+			map.fitBounds(latlngbounds);
+		}
+	});
+	
+	
 	Groupieology.AppView = Backbone.View.extend({
 		el: '#groupiology-app',
 		events: {
@@ -89,6 +152,14 @@ $(function() {
 				/* append it to the search list */				
 				this.$('#content').append(view.render().el);
 			});
+			
+			this.listenTo(Groupieology.events, 'sync', function() {
+				var view = new Groupieology.EventsView({
+					model: Groupieology.events
+				});
+				
+				view.render();
+			});
 		},
 		search : function(event) {
 			/* get the performer term */
@@ -96,6 +167,7 @@ $(function() {
 				var $term = $('input[id="search"]').val();
 				this.searchResults.setSearchKey($term);
 				this.$('#content').empty();
+				
 				this.searchResults.fetch();
 			}
 		}
@@ -108,13 +180,14 @@ $(function() {
 		
 		showArtistMap: function(id) {
 			/* get the events for an artist */
-			var artistEvents = new Groupieology.Events();
-			artistEvents.setSearchKey(id);
+			Groupieology.events = Groupieology.events || new Groupieology.Events();
+			Groupieology.events.setSearchKey(id);
 			$('#content').empty();
-			artistEvents.fetch();
+			Groupieology.events.fetch();
 		}
 	});
 	
+	Groupieology.events = new Groupieology.Events();
 	Groupieology.router = new Groupieology.Router();
 	Backbone.history.start();
 	Groupieology.app = new Groupieology.AppView();
