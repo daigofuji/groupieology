@@ -22,20 +22,28 @@
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+	margin-bottom: 1rem;
 }
 
 
 // artist results style
 .performer {
+	@extend .round;
 	height: 80px;
-
+	width: auto;
+	float: left;
+	margin-right: .6rem;
 	&:hover {
-		background: gray;
+		background: #f4f4f4;
 	}
 }
 .performer-photo {
-	height:80px; 
 	width:80px;
+	overflow: hidden;
+}
+.performer-name {
+	display: inline-block;
+	margin: 25px 10px;
 }
 //.icon-headphones {
 //	display:inline-block;

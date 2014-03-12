@@ -1545,7 +1545,7 @@ select {
   border-radius: 3px;
 }
 /* line 112, ../bower_components/foundation/scss/foundation/components/_alert-boxes.scss */
-.alert-box.round {
+.alert-box.round, .alert-box.performer {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
@@ -3486,7 +3486,7 @@ button.radius, .button.radius {
   border-radius: 3px;
 }
 /* line 222, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-button.round, .button.round {
+button.round, button.performer, .button.round, .button.performer {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
@@ -3647,16 +3647,16 @@ button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert
   border-top-right-radius: 3px;
 }
 /* line 40, ../bower_components/foundation/scss/foundation/components/_button-groups.scss */
-.button-group.round > * > button, .button-group.round > * .button {
+.button-group.round > * > button, .button-group.performer > * > button, .button-group.round > * .button, .button-group.performer > * .button {
   border-left: 1px solid;
   border-color: rgba(255, 255, 255, 0.5);
 }
 /* line 46, ../bower_components/foundation/scss/foundation/components/_button-groups.scss */
-.button-group.round > *:first-child button, .button-group.round > *:first-child .button {
+.button-group.round > *:first-child button, .button-group.performer > *:first-child button, .button-group.round > *:first-child .button, .button-group.performer > *:first-child .button {
   border-left: 0;
 }
 /* line 74, ../bower_components/foundation/scss/foundation/components/_button-groups.scss */
-.button-group.round > *:first-child, .button-group.round > *:first-child > a, .button-group.round > *:first-child > button, .button-group.round > *:first-child > .button {
+.button-group.round > *:first-child, .button-group.performer > *:first-child, .button-group.round > *:first-child > a, .button-group.performer > *:first-child > a, .button-group.round > *:first-child > button, .button-group.performer > *:first-child > button, .button-group.round > *:first-child > .button, .button-group.performer > *:first-child > .button {
   -moz-border-radius-bottomleft: 1000px;
   -moz-border-radius-topleft: 1000px;
   -webkit-border-bottom-left-radius: 1000px;
@@ -3665,7 +3665,7 @@ button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert
   border-top-left-radius: 1000px;
 }
 /* line 78, ../bower_components/foundation/scss/foundation/components/_button-groups.scss */
-.button-group.round > *:last-child, .button-group.round > *:last-child > a, .button-group.round > *:last-child > button, .button-group.round > *:last-child > .button {
+.button-group.round > *:last-child, .button-group.performer > *:last-child, .button-group.round > *:last-child > a, .button-group.performer > *:last-child > a, .button-group.round > *:last-child > button, .button-group.performer > *:last-child > button, .button-group.round > *:last-child > .button, .button-group.performer > *:last-child > .button {
   -moz-border-radius-bottomright: 1000px;
   -moz-border-radius-topright: 1000px;
   -webkit-border-bottom-right-radius: 1000px;
@@ -4624,7 +4624,7 @@ select::-ms-expand {
 }
 
 /* line 364, ../bower_components/foundation/scss/foundation/components/_forms.scss */
-.prefix.button.round {
+.prefix.button.round, .prefix.button.performer {
   -webkit-border-radius: 0;
   border-radius: 0;
   -moz-border-radius-bottomleft: 1000px;
@@ -4636,7 +4636,7 @@ select::-ms-expand {
 }
 
 /* line 365, ../bower_components/foundation/scss/foundation/components/_forms.scss */
-.postfix.button.round {
+.postfix.button.round, .postfix.button.performer {
   -webkit-border-radius: 0;
   border-radius: 0;
   -moz-border-radius-bottomright: 1000px;
@@ -5209,7 +5209,7 @@ kbd {
   border-radius: 3px;
 }
 /* line 97, ../bower_components/foundation/scss/foundation/components/_labels.scss */
-.label.round {
+.label.round, .label.performer {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
@@ -5935,12 +5935,12 @@ ul.pagination li {
   border-radius: 2px;
 }
 /* line 72, ../bower_components/foundation/scss/foundation/components/_progress-bars.scss */
-.progress.round {
+.progress.round, .progress.performer {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
 /* line 73, ../bower_components/foundation/scss/foundation/components/_progress-bars.scss */
-.progress.round .meter {
+.progress.round .meter, .progress.performer .meter {
   -webkit-border-radius: 999px;
   border-radius: 999px;
 }
@@ -6001,19 +6001,19 @@ ul.pagination li {
   background: #007ba4;
 }
 /* line 132, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
-.range-slider.round {
+.range-slider.round, .range-slider.performer {
   background: #fafafa;
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
 /* line 134, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
-.range-slider.round .range-slider-handle {
+.range-slider.round .range-slider-handle, .range-slider.performer .range-slider-handle {
   background: #008cba;
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
 /* line 99, ../bower_components/foundation/scss/foundation/components/_range-slider.scss */
-.range-slider.round .range-slider-handle:hover {
+.range-slider.round .range-slider-handle:hover, .range-slider.performer .range-slider-handle:hover {
   background: #007ba4;
 }
 
@@ -6363,7 +6363,7 @@ dialog[open] {
   border-top-right-radius: 3px;
 }
 /* line 187, ../bower_components/foundation/scss/foundation/components/_split-buttons.scss */
-.split.button.round span {
+.split.button.round span, .split.button.performer span {
   -moz-border-radius-bottomright: 1000px;
   -moz-border-radius-topright: 1000px;
   -webkit-border-bottom-right-radius: 1000px;
@@ -6641,17 +6641,17 @@ div.switch.radius span:last-child {
   border-radius: 3px;
 }
 /* line 311, ../bower_components/foundation/scss/foundation/components/_switch.scss */
-div.switch.round {
+div.switch.round, div.switch.performer {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
 /* line 312, ../bower_components/foundation/scss/foundation/components/_switch.scss */
-div.switch.round span:last-child {
+div.switch.round span:last-child, div.switch.performer span:last-child {
   -webkit-border-radius: 999px;
   border-radius: 999px;
 }
 /* line 313, ../bower_components/foundation/scss/foundation/components/_switch.scss */
-div.switch.round label {
+div.switch.round label, div.switch.performer label {
   padding: 0 0.5625rem;
 }
 
@@ -6912,12 +6912,12 @@ table tfoot tr td {
   border-radius: 3px;
 }
 /* line 86, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
-.tooltip.round {
+.tooltip.round, .tooltip.performer {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
 }
 /* line 88, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
-.tooltip.round > .nub {
+.tooltip.round > .nub, .tooltip.performer > .nub {
   left: 2rem;
 }
 /* line 93, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
@@ -9427,19 +9427,29 @@ th.hide-for-touch {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
-/* line 29, ../scss/_groupieology.scss */
+/* line 30, ../scss/_groupieology.scss */
 .performer {
   height: 80px;
+  width: auto;
+  float: left;
+  margin-right: .6rem;
 }
-/* line 32, ../scss/_groupieology.scss */
+/* line 36, ../scss/_groupieology.scss */
 .performer:hover {
-  background: gray;
+  background: #f4f4f4;
 }
 
-/* line 36, ../scss/_groupieology.scss */
+/* line 40, ../scss/_groupieology.scss */
 .performer-photo {
-  height: 80px;
   width: 80px;
+  overflow: hidden;
+}
+
+/* line 44, ../scss/_groupieology.scss */
+.performer-name {
+  display: inline-block;
+  margin: 25px 10px;
 }

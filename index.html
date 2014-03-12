@@ -61,10 +61,9 @@
     <!-- Backbone view templates -->
 
     <script type="text/template" id="search-result-template">
-      <div id="<%- id %>">
-        <a href="/#artist/<%- id %>"><h1><%- name %></h1></a>
-        <img src="<%- image %>">
-      </div>
+      <a href="#/artist/<%- id %>" data-artist-id="<%- id %>" class="performer-link">
+        <div class="th left performer-photo"><img src="<%= image ? image : 'img/music.png' %>" alt=""></div> <span class="performer-name"><%- name %></span>
+      </a>
     </script>
 
 
