@@ -45,11 +45,23 @@
     <div class="row">
       <div class="large-12 columns">
        
-        <div id="search-results"></div>
+        <ul id="search-results" class="inline-list"></ul>
 
-
+  
+  
       </div>
     </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+       
+        <div id="artist-info" class="inline-list"></div>
+
+  
+  
+      </div>
+    </div>
+
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/underscore-min.js"></script>
     <script type="text/javascript" src="js/backbone-min.js"></script>
@@ -61,10 +73,9 @@
     <!-- Backbone view templates -->
 
     <script type="text/template" id="search-result-template">
-      <div id="<%- id %>">
-        <h1><%- name %></h1>
-        <img src="<%- image %>">
-      </div>
+      <a href="#/artist/<%- id %>" data-artist-id="<%- id %>" class="performer-link">
+        <div class="th left performer-photo" data-bg-src="<%- image %>"></div> <span class="performer-name"><%- name %></span>
+      </a>
     </script>
 
 

@@ -25,6 +25,18 @@
 }
 
 
+// artist results style
+.performer {
+	height: 80px;
+
+	&:hover {
+		background: gray;
+	}
+}
+.performer-photo {
+	height:80px; 
+	width:80px;
+}
 //.icon-headphones {
 //	display:inline-block;
 //	width:128px;
