@@ -70,7 +70,18 @@ $(function() {
 			return this;
 		}		
 	});
+
+	Groupieology.PerformerDetailView = Backbone.View.extend({
+		tagName: 'div',
+		className: 'performer-detail',
+		template: _.template($('#performer-template').html()),
+		render: function() {
+			this.$el.html(this.template(this.model.toJSON()));
+			return this;
+		}		
+	});
 	
+
 	Groupieology.EventsView = Backbone.View.extend({
 		render: function() {
 			var locations = [];
@@ -139,13 +150,10 @@ $(function() {
 		events: {
 			'keypress #search' : 'search'
 		},
-		initialize : function() {
-			/* create a simple performers collection to hold our search results */
-			this.searchResults = new Groupieology.Performers();
-			
+		initialize : function() {	
 			/* set up a listener function to update the search results div when the 
 			 * Performers collection has changed */
-			this.listenTo(this.searchResults, 'add', function(performer) {
+			this.listenTo(Groupieology.performers, 'add', function(performer) {
 				/* create a new performer view */
 				var view = new Groupieology.PerformerView({ model: performer });
 				
@@ -159,16 +167,27 @@ $(function() {
 				});
 				
 				view.render();
+
+				/* find the performer clicked */
+				var currentArtist = new Groupieology.Performer(
+					Groupieology.performers.findWhere({ id: Groupieology.currentArtist})
+				);
+				var performerView = 
+					new Groupieology.PerformerDetailView({ 
+						model: currentArtist.attributes 
+					});
+					this.$('#content').append(performerView.render().el);
+
 			});
 		},
 		search : function(event) {
 			/* get the performer term */
 			if (event.keyCode == 13) {
 				var $term = $('input[id="search"]').val();
-				this.searchResults.setSearchKey($term);
+				Groupieology.performers.setSearchKey($term);
 				this.$('#content').empty();
 				
-				this.searchResults.fetch();
+				Groupieology.performers.fetch();
 			}
 		}
 	});
@@ -184,9 +203,12 @@ $(function() {
 			Groupieology.events.setSearchKey(id);
 			$('#content').empty();
 			Groupieology.events.fetch();
+			Groupieology.currentArtist = parseInt(id, 10);
 		}
 	});
 	
+
+	Groupieology.performers = new Groupieology.Performers();
 	Groupieology.events = new Groupieology.Events();
 	Groupieology.router = new Groupieology.Router();
 	Backbone.history.start();
