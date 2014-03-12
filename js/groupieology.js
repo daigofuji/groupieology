@@ -17,7 +17,28 @@ $(function() {
 	});
 	
 	var Performers = Backbone.Collection.extend({
-		model: Performer
+		model: Performer,
+		parse: function(data) {
+			var performers = [];
+			if (typeof data.performers !== 'undefined') {
+				$.each(data.performers, function(i,v) {
+					performers.push(v);
+				});
+			}
+			console.log(performers);
+			return performers;			
+		},
+		fetch: function(options) {
+			options = options || {};
+			options.dataType = 'json';
+			options.url = 'http://api.seatgeek.com/2/performers?q=' + this.searchKey;
+
+			/* fetch the data */
+			return Backbone.Collection.prototype.fetch.call(this, options);
+		},
+		setSearchKey: function(key) {
+			this.searchKey = key;
+		}
 	});
 	
 	var PerformerView = Backbone.View.extend({
@@ -31,42 +52,20 @@ $(function() {
 	});
 	
 	var Groupieology = Backbone.View.extend({
-		el: '',
+		el: '#groupiology-app',
 		events: {
-		
+			'click #find-performer' : 'search'
 		},
 		initialize : function() {
-			/* set up the api endpoints */
-			this.performerEndPoint = 'http://api.seatgeek.com/2/performers';
-			
 			/* create a simple performers collection to hold our search results */
 			this.searchResults = new Performers();
-			
 		},
 		search : function() {
 			/* get the performer term */
 			var $term = $('input[id="search"]').val();
-			
-			/* search */
-			$.get({
-				url: this.performerEndPoint,
-				data: {
-					q : $term
-				},
-				dataType: 'json',
-				success: function(data, status, xhr) {
-					/* parse through the results by grabbing the performer element */
-					if (typeof data.performers !== 'undefined') {
-						$.each(data.performers, function() {
-							/* create a new performer model */
-							var performer = new Performer(this);
-							
-							/* add it to the result set */
-							this.performers.push(performer);
-						});
-					}					
-				}
-			});
+			this.searchResults.setSearchKey($term);
+			this.searchResults.fetch();			
 		}
 	});
+	var GroupieologyApp = new Groupieology();
 });
