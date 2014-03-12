@@ -7739,7 +7739,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important;
   }
 }
-@media only screen and (min-width: 120.063em) and (max-width: 99999999em) {
+@media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
   /* line 149, ../bower_components/foundation/scss/foundation/components/_type.scss */
   .xxlarge-only-text-left {
     text-align: left !important;
@@ -7969,7 +7969,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important;
   }
 }
-@media only screen and (min-width: 120.063em) and (max-width: 99999999em) {
+@media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
   /* line 249, ../bower_components/foundation/scss/foundation/components/_type.scss */
   .xxlarge-only-text-left {
     text-align: left !important;
@@ -8649,7 +8649,7 @@ blockquote p {
     text-align: justify !important;
   }
 }
-@media only screen and (min-width: 120.063em) and (max-width: 99999999em) {
+@media only screen and (min-width: 120.063em) and (max-width: 999999999999) {
   /* line 149, ../bower_components/foundation/scss/foundation/components/_type.scss */
   .xxlarge-only-text-left {
     text-align: left !important;
@@ -9429,9 +9429,9 @@ footer a {
 
 /* line 24, ../scss/_groupieology.scss */
 .input-search {
-  font-size: 3.125rem;
+  font-size: 1.625rem;
+  height: 2rem;
   font-weight: 300;
-  height: 4.375rem;
   padding: 0;
   width: 100%;
   letter-spacing: -0.02em;
@@ -9452,33 +9452,46 @@ footer a {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+@media only screen and (min-width: 40.063em) {
+  /* line 24, ../scss/_groupieology.scss */
+  .input-search {
+    font-size: 3.125rem;
+    height: 4.375rem;
+  }
+}
 
-/* line 51, ../scss/_groupieology.scss */
+/* line 55, ../scss/_groupieology.scss */
 .performer {
   height: 80px;
   width: auto;
   float: left;
   margin-right: .6rem;
 }
-/* line 57, ../scss/_groupieology.scss */
+/* line 61, ../scss/_groupieology.scss */
 .performer:hover {
   background: #f4f4f4;
 }
 
-/* line 61, ../scss/_groupieology.scss */
+/* line 65, ../scss/_groupieology.scss */
 .performer-photo {
   width: 80px;
   overflow: hidden;
 }
 
-/* line 65, ../scss/_groupieology.scss */
+/* line 69, ../scss/_groupieology.scss */
 .performer-name {
   display: inline-block;
   margin: 25px 10px;
 }
 
-/* line 69, ../scss/_groupieology.scss */
+/* line 73, ../scss/_groupieology.scss */
 .event-map {
   width: 100%;
   height: 400px;
+}
+
+/* line 77, ../scss/_groupieology.scss */
+.performer-detail-photo {
+  width: 120px;
+  overflow: hidden;
 }
