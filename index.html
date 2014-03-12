@@ -4,32 +4,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Groupieology: Relive concert experiences of your favorite musicians</title>
+
+
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,700|Audiowide' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
+ 
+    <!-- Open Graph: https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/
+    Twitter: https://dev.twitter.com/docs/cards/types/summary-card
+    ============================== -->
+    <meta property="og:title" content="{{ page.title }}"/>
+    <meta property="og:site_name" content=" - {{ site.name }}"/>
+    <meta property="og:url" content=" - {{ site.url }}"/>
+    <meta property="og:description" content="{{ page.description }}"/>
+    <!--<meta property="og:image" content="http://IMAGEURL"/> -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@DaigoFuji">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <!--<meta name="twitter:image" content="http://IMAGEURL">-->
+
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
-  <body>
-    <div class="row">
+
+
+  <body id="groupiology-app">
+    <header class="row">
       <div class="large-12 columns">
-        <h1><i class="icon-headphones"></i> Groupieology</h1>
-        <input id="find-performer" class="js-search-input input-search" placeholder="Type to search">
+        <h1><i class="fa fa-headphones"></i> Groupieology</h1>
+      </div>
+    </header>
+
+    <div class="row container-searchbox" >
+      <div class="large-10 large-offset-1 columns ">
+        
+        <input id="search" class="js-search-input input-search" placeholder="Type artist/band name">
       </div>
     </div>
     
     <div class="row">
       <div class="large-12 columns">
        
+        <div id="search-results"></div>
 
 
       </div>
     </div>
-
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/underscore-min.js"></script>
     <script type="text/javascript" src="js/backbone-min.js"></script>
     <script type="text/javascript" src="js/groupieology.js"></script>
+
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- Backbone view templates -->
+
+    <script type="text/template" id="search-result-template">
+      <div id="<%- id %>">
+        <h1><%- name %></h1>
+        <img src="<%- image %>">
+      </div>
+    </script>
+
+
   </body>
 </html>
