@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groupieology: </title>
+    <title>Groupieology: Relive concert experiences of your favorite musicians</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,700|Audiowide' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
     <div class="row">
       <div class="large-12 columns">
-        <h1>Groupieology</h1>
-        <input class="js-search-input input-search" placeholder="Type to search">
+        <h1><i class="icon-headphones"></i> Groupieology</h1>
+        <input id="find-performer" class="js-search-input input-search" placeholder="Type to search">
       </div>
     </div>
     
@@ -23,8 +25,10 @@
       </div>
     </div>
 
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/backbone-min.js"></script>
+    <script type="text/javascript" src="js/groupieology.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="js/app.js"></script>
   </body>

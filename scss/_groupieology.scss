@@ -6,9 +6,9 @@
 	height: rem-calc(70);
 	padding: 0;
 	width: 100%;
-	font-family: sans-serif;
 	letter-spacing: -0.02em;
-	font-weight: 400;
+	font-weight: 200;
+	font-family: 'Raleway', sans-serif;
 	font-style: normal;
 	border: 1px solid #fefefe;
 	padding: 0 15px;
@@ -22,4 +22,13 @@
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+}
+
+
+.icon-headphones {
+	display:inline-block;
+	width:128px;
+	height:60px;
+	background-image: url('img/headphones.svg');
+	background-repeat: no-repeat;
 }
