@@ -44,27 +44,39 @@ $(function() {
 	var PerformerView = Backbone.View.extend({
 		tagName: 'div',
 		className: 'performer',
-		template: '',
+		template: _.template($('#search-result-template').html()),
 		render: function() {
 			this.$el.html(this.template(this.model.toJSON()));
-			return $this;
+			return this;
 		}		
 	});
 	
 	var Groupieology = Backbone.View.extend({
 		el: '#groupiology-app',
 		events: {
-			'click #find-performer' : 'search'
+			'keypress #search' : 'search'
 		},
 		initialize : function() {
 			/* create a simple performers collection to hold our search results */
 			this.searchResults = new Performers();
+			
+			/* set up a listener function to update the search results div when the 
+			 * Performers collection has changed */
+			this.listenTo(this.searchResults, 'add', function(performer) {
+				/* create a new performer view */
+				var view = new PerformerView({ model: performer });
+				
+				/* append it to the search list */
+				this.$('#search-results').append(view.render().el);
+			});
 		},
-		search : function() {
+		search : function(event) {
 			/* get the performer term */
-			var $term = $('input[id="search"]').val();
-			this.searchResults.setSearchKey($term);
-			this.searchResults.fetch();			
+			if (event.keyCode == 13) {
+				var $term = $('input[id="search"]').val();
+				this.searchResults.setSearchKey($term);
+				this.searchResults.fetch();
+			}
 		}
 	});
 	var GroupieologyApp = new Groupieology();
