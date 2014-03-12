@@ -62,7 +62,7 @@ $(function() {
 	});
 	
 	Groupieology.PerformerView = Backbone.View.extend({
-		tagName: 'li',
+		tagName: 'div',
 		className: 'performer',
 		template: _.template($('#search-result-template').html()),
 		render: function() {
@@ -110,7 +110,7 @@ $(function() {
 			/* get the events for an artist */
 			var artistEvents = new Groupieology.Events();
 			artistEvents.setSearchKey(id);
-			this.$('#content').empty();
+			$('#content').empty();
 			artistEvents.fetch();
 		}
 	});
